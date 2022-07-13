@@ -47,16 +47,16 @@ class ViewController: UIViewController {
         
         guard let pokemon = pokemon else { return }
 
-        let pokes = pokemon.moves
-
-        print(pokes)
-        
-//        let alert = UIAlertController(title: pokemon.name, message: pokes, preferredStyle: .alert)
-//        let action = UIAlertAction(title: "Sounds Good", style: .default, handler: nil)
-//        alert.addAction(action)
-//        DispatchQueue.main.async {
-//            self.present(alert, animated: true, completion: nil)
-//        }
+        let moves = pokemon.pokemon.compactMap { $0.pokemon.name }.reduce("") { partialResult, move in
+            return partialResult + move + "\n"
+        }
+        print(moves)
+        let alert = UIAlertController(title: pokemon.name, message: moves, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Sounds Good", style: .default, handler: nil)
+        alert.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
 
     }
 

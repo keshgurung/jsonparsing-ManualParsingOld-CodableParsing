@@ -10,7 +10,7 @@ import Foundation
 struct Pokemon {
     
     let damage_relations : Damage
-    let game_indicies : [ GameInd ]
+    let game_indicies : [GameInd]
     let generation: NameLink
     let id: Int
     let move_damage_class : NameLink
@@ -27,12 +27,12 @@ struct NameLink {
 
 struct Damage {
  
-    let double_damage_form : [ NameLink]?
-    let double_damage_to : [NameLink]?
-    let half_damage_from : [NameLink]?
-    let half_damage_to : [NameLink]?
-    let no_damage_from : [NameLink]?
-    let no_damage_to : [NameLink]?
+    let double_damage_form : [NameLink]
+    let double_damage_to : [NameLink]
+    let half_damage_from : [NameLink]
+    let half_damage_to : [NameLink]
+    let no_damage_from : [Any]
+    let no_damage_to : [NameLink]
     
 }
     
